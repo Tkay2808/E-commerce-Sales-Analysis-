@@ -40,12 +40,24 @@ Supporting objectives include:
 5. **Analyze customer spending concentration**, identifying both top contributors and opportunities for diversification.  
 6. **Standardize reporting** with consistent calculations (YoY, growth rates, color indicators).
 
-## Data Transformation and Cleaning 
+## Data Transformation and Cleaning   
 
+To prepare the raw data for analysis, the following steps were carried out using Power Query: 
+
+1 **Cleaning:** Standardize text into proper case, Replace uncessary dots after values using find and replace,deleted irrelevant columns not important for further anysis
+2. **Fixing Date Column with Locale**
+
+The dataset had inconsistent **date formats** due to regional settings. For example, `03/07/2024` was read as **March 7** (US format) instead of **July 3** (UK format).  
+
+To resolve this in Power Query:  
+- The column type was changed **Using Locale**.  
+- Selected **Date** as data type.  
+- Applied the correct locale (e.g., *English (United Kingdom)*).  
+ This is crucial for **time intelligence calculations** like YoY and MoM.
 ---
 ## Data Normalization 
 
-To ensure accuracy, efficiency, and consistency in reporting, the sales data was normalized before modeling.  
+To ensure accuracy, efficiency and consistency in reporting, the sales data was normalized before modeling.  
 
 #### First Normal Form (1NF)  
 - Ensured atomic values in the fact table (e.g., one row per sales transaction with no repeating groups).  
