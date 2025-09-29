@@ -22,6 +22,13 @@ This is an E-commerce Sales Analysis to uncover key trends shaping Sales Perform
 ---
 ## Analysis and Calculations Using DAX
 
+This analysis was done using DAX to quantify ;
+- Base Measure : Total Sales,Total Quantity etc
+- Previous Year (PY) Measure :PY Sales,PY Qty etc
+-  Year Over Year (YOY) Measure &
+-  Color Measures which is the conditional colour Indicator.
+
+### Base Measure
 -- Total Sales
 Total Sales = SUM(fact_table[Sales])
 
@@ -33,7 +40,9 @@ Avg Unit Price = AVERAGE(fact_table[unit_price])
 
 -- Distinct Customers
 Customers = DISTINCTCOUNT(fact_table[Customer_key])
----
+
+### Previous Year (PY) Measure
+
 -- Previous Year Sales
 PY Sales = 
 CALCULATE(
@@ -67,6 +76,7 @@ CALCULATE(
 )
 
 ---
+### Year Over Year (YOY) Measures
 
 -- YoY Sales %
 % YOY Sales =
@@ -92,7 +102,7 @@ VAR a = DIVIDE([Customers],[PY Customers]) - 1
 VAR label = FORMAT(a,"#0.0%")
 RETURN label & IF(a > 0, "▲","▼")
 
----
+### Color Measures 
 
 -- Sales Color Indicator
 Sales Color = IF([Total Sales] > [PY Sales], "#85BD5F", "#A83F22")
