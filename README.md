@@ -18,32 +18,41 @@ This is an E-commerce Sales Analysis to uncover key trends shaping Sales Perform
 
 ---
 ## Data Modelling 
+
 ![image](Data_Modelling.JPG)
+
 ---
+
 ## Analysis and Calculations Using DAX
 
-This analysis was done using DAX to quantify ;
-- Base Measure : Total Sales,Total Quantity etc
-- Previous Year (PY) Measure :PY Sales,PY Qty etc
--  Year Over Year (YOY) Measure &
--  Color Measures which is the conditional colour Indicator.
+This analysis was done using DAX to quantify the various metic which where grouped into;
+- **Base Measure** : Total Sales,Total Quantity etc
+- **Previous Year (PY) Measure** :PY Sales,PY Qty etc
+-  **Year Over Year (YOY) Measure** &
+- **Color Measures which is the conditional colour Indicator**.
 
 ### Base Measure
--- Total Sales
+
+- **Total Sales**
+
 Total Sales = SUM(fact_table[Sales])
 
--- Total Quantity
+- **Total Quantity**
+
 Total Qty = SUM(fact_table[quantity])
 
--- Average Unit Price
+- **Average Unit Price**
+
 Avg Unit Price = AVERAGE(fact_table[unit_price])
 
--- Distinct Customers
+- **Customers**
+
 Customers = DISTINCTCOUNT(fact_table[Customer_key])
 
 ### Previous Year (PY) Measure
 
--- Previous Year Sales
+- **Previous Year Sales**
+
 PY Sales = 
 CALCULATE(
     [Total Sales],
@@ -51,7 +60,8 @@ CALCULATE(
     REMOVEFILTERS()
 )
 
--- Previous Year Quantity
+- **Previous Year Quantity**
+
 PY Qty = 
 CALCULATE(
     [Total Qty],
@@ -59,7 +69,8 @@ CALCULATE(
     REMOVEFILTERS()
 )
 
--- Previous Year Unit Price
+- **Previous Year Unit Price**
+
 PY Price = 
 CALCULATE(
     [Avg Unit Price],
@@ -67,7 +78,8 @@ CALCULATE(
     REMOVEFILTERS()
 )
 
--- Previous Year Customers
+- **Previous Year Customers**
+
 PY Customers = 
 CALCULATE(
     [Customers],
@@ -75,45 +87,56 @@ CALCULATE(
     REMOVEFILTERS()
 )
 
----
 ### Year Over Year (YOY) Measures
 
--- YoY Sales %
+- **YoY Sales %**
+
 % YOY Sales =
+
 VAR a = DIVIDE([Total Sales],[PY Sales]) - 1
 VAR label = FORMAT(a,"#0.0%")
 RETURN label & IF(a > 0, "▲","▼")
 
--- YoY Quantity %
+- **YoY Quantity %**
+
 % YOY Qty =
+
 VAR a = DIVIDE([Total Qty],[PY Qty]) - 1
 VAR label = FORMAT(a,"#0.0%")
 RETURN label & IF(a > 0, "▲","▼")
 
--- YoY Price %
+- **YoY Price %**
+
 % YOY Price =
+
 VAR a = DIVIDE([Avg Unit Price],[PY Price]) - 1
 VAR label = FORMAT(a,"#0.0%")
 RETURN label & IF(a > 0, "▲","▼")
 
--- YoY Customers %
+- **YoY Customers %**
+
 % YOY Customers =
+
 VAR a = DIVIDE([Customers],[PY Customers]) - 1
 VAR label = FORMAT(a,"#0.0%")
 RETURN label & IF(a > 0, "▲","▼")
 
 ### Color Measures 
 
--- Sales Color Indicator
+- **Sales Color Indicator**
+
 Sales Color = IF([Total Sales] > [PY Sales], "#85BD5F", "#A83F22")
 
--- Quantity Color Indicator
+- **Quantity Color Indicator**
+
 Qty Color = IF([Total Qty] > [PY Qty], "#85BD5F", "#A83F22")
 
--- Price Color Indicator
+- **Price Color Indicator**
+
 Price Color = IF([Avg Unit Price] > [PY Price], "#85BD5F", "#A83F22")
 
--- Customer Color Indicator
+- **Customer Color Indicator**
+
 Customer Color = IF([Customers] > [PY Customers], "#85BD5F", "#A83F22")
 
 
@@ -122,7 +145,9 @@ Customer Color = IF([Customers] > [PY Customers], "#85BD5F", "#A83F22")
 ## Data Visualisation (Dashboard)
 
 ![image](Dashboard.JPG)
+
 ---
+
 ## Insights 
 
 --- 
