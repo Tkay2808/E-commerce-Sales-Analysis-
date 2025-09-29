@@ -7,7 +7,7 @@ This is an E-commerce Sales Analysis to uncover key trends shaping Sales Perform
 
 ## Introduction 
 
-The E-commerce sales analysis is a comprehensive analysis using  dashboard,it provides unified and interactive view of organizational sales performance. By consolidating unstructured raw data into a structured and visual format, the dashboard enables stakeholders to monitor revenue, quantity sold, unit pricing, customer engagement, and geographical distribution.  
+The E-commerce sales analysis is a comprehensive analysis using  dashboard,to provide unified and interactive view of organizational sales performance. By consolidating unstructured raw data into structured and visual format, the dashboard enables stakeholders to monitor revenue, quantity sold, unit pricing, customer engagement, and geographical distribution.  
 
 ---
 
@@ -253,14 +253,38 @@ Customer Color = IF([Customers] > [PY Customers], "#85BD5F", "#A83F22")
 
 ---
 
-## Insights 
+## Insights  
+
+From the integrated dashboard and analysis:  
+
+- **Revenue:** Achieved **$105M**, representing **16.1% growth vs last year (YoY)**.  
+- **Quantity Sold:** 6M units, also **+16.1% YoY**.  
+- **Average Unit Price:** $17.6, stable compared to last year.  
+- **Customer Base:** 9,191 unique customers, with the **top 5 customers driving a major share of spending**.  
+- **Top Products by Units:**  
+  - Cartons – 2.4M units  
+  - Cans – 1.3M units  
+  - Bottles – 0.8M units  
+- **Geographical Distribution:** Strong performance in **Bangladesh, India, and Lithuania**, with steady growth in **Poland and Germany**.  
+- **Monthly Trends:** Sales showed natural fluctuations but maintained a generally upward trajectory.
 
 --- 
 ## Conclusion 
 
+The Sales Analytics Dashboard successfully combined fragmented sales data into a **single source of truth**. The use of **data modelling, normalization, and DAX measures** provided accurate YoY benchmarks, interactive KPI indicators, and customer/product-level insights.  
+
 --- 
 ## Recommendation 
 
+Based on the findings:  
+
+1. **Strengthen high-performing markets** (Bangladesh, India, Lithuania) with targeted campaigns and resource allocation.
+   
+2. **Expand product availability** for high-demand categories (cartons, cans, bottles) to maximize volume growth.
+
+3. **Price strategy optimization:** Explore bundled offerings or premium variants to increase average unit price.
+ 
+4. **Ongoing data governance:** Maintain continuous data cleaning, normalization, and monitoring to ensure accuracy and reliability in future reporting.
 ---
 ## About me 
 
