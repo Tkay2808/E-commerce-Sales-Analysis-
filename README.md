@@ -45,6 +45,7 @@ Supporting objectives include:
 To prepare the raw data for analysis, the following steps were carried out using Power Query: 
 
 1 **Cleaning:** Standardize text into proper case, Replace uncessary dots after values using find and replace,deleted irrelevant columns not important for further anysis
+
 2. **Fixing Date Column with Locale**
 
 The dataset had inconsistent **date formats** due to regional settings. For example, `03/07/2024` was read as **March 7** (US format) instead of **July 3** (UK format).  
@@ -54,7 +55,9 @@ To resolve this in Power Query:
 - Selected **Date** as data type.  
 - Applied the correct locale (e.g., *English (United Kingdom)*).  
  This is crucial for **time intelligence calculations** like YoY and MoM.
+
 ---
+
 ## Data Normalization 
 
 To ensure accuracy, efficiency and consistency in reporting, the sales data was normalized before modeling.  
@@ -73,11 +76,13 @@ To ensure accuracy, efficiency and consistency in reporting, the sales data was 
 This normalization process reduced redundancy, improved query performance, and created a clean **star schema** where the **fact_table** connects seamlessly to multiple dimensions.
 
 ---
+
 ## Data Modelling   
 
 The data model follows a **Star Schema Design** to optimize reporting and analysis.  
+ 
+#### Fact Table 
 
-#### Fact Table  
 **fact_table**  
 - Contains transactional data for sales performance.  
 - Key fields:  
