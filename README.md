@@ -1,4 +1,4 @@
-# E-commerce-Sales-Analysis-
+# E-commerce-Sales-Analysis
 This is an E-commerce Sales Analysis to uncover key trends shaping Sales Performance using Power bi.
 
 ![image](Power_bi.png)
@@ -158,4 +158,9 @@ Customer Color = IF([Customers] > [PY Customers], "#85BD5F", "#A83F22")
 
 ---
 ## About me 
+
+- I transform complex data into , actionable insights.
+Using analytics, machincleare learning, and visualization, I help you understand trends, improve efficiency, and plan for the future.
+
+Connect with me @https://www.linkedin.com/in/adetokunbo-olasupo-70aa042a1
 
